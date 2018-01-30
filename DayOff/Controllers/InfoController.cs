@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using DayOff.Services;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace DayOff.Controllers
@@ -11,24 +7,20 @@ namespace DayOff.Controllers
     [RoutePrefix("api/info")]
     public class InfoController : ApiController
     {
-        [Route("remotegames")]
-        public string GetRemoteGames()
+        const string REMOTE_GAMES_URI = "http://localhost:49500/api/game";
+
+        public InfoController()
         {
-            var request = WebRequest.Create("http://localhost:49500//api/game");
-            request.Method = "GET";
-            using (var response = request.GetResponse())
-            {
-                using (var stream = response.GetResponseStream())
-                {
-                    using (var streamReader = new StreamReader(stream))
-                    {
-                        var result = streamReader.ReadToEnd();
-                        response.Close();
-                        return result;
-                    }
-                }
-            }
+            infoService = new InfoService();
         }
 
+        private readonly InfoService infoService;
+
+        [Route("remotegames")]
+        public async Task<string> GetRemoteGames()
+        {
+            var result = await infoService.GetInfoFromRemoteService(REMOTE_GAMES_URI);
+            return result; 
+        }
     }
 }

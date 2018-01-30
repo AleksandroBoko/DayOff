@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayOff", "DayOff\DayOff.csproj", "{CECE52F6-3C64-422A-9C7F-6E9CDCF50E03}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayOff.Services", "DayOff.Services\DayOff.Services.csproj", "{D6EA3E1C-DA98-4993-A06D-714124F3910E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CECE52F6-3C64-422A-9C7F-6E9CDCF50E03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CECE52F6-3C64-422A-9C7F-6E9CDCF50E03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CECE52F6-3C64-422A-9C7F-6E9CDCF50E03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6EA3E1C-DA98-4993-A06D-714124F3910E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6EA3E1C-DA98-4993-A06D-714124F3910E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6EA3E1C-DA98-4993-A06D-714124F3910E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6EA3E1C-DA98-4993-A06D-714124F3910E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
