@@ -2,9 +2,9 @@
 using System.Net;
 using System.Threading.Tasks;
 
-namespace DayOff.Services
+namespace DayOff.Services.Controls.Implementation
 {
-    public class InfoService
+    public class InfoService : IService
     {
         public async Task<string> GetInfoFromRemoteService(string uri)
         {

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using DayOff.App_Start;
 using System.Web.Http;
 
 namespace DayOff
@@ -10,6 +8,8 @@ namespace DayOff
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+
+            AutofacConfig.ConfigureContainer(config);
 
             // Web API routes
             config.MapHttpAttributeRoutes();

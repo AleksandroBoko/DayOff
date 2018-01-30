@@ -1,4 +1,4 @@
-﻿using DayOff.Services;
+﻿using DayOff.Services.Controls;
 using System.Threading.Tasks;
 using System.Web.Http;
 
@@ -9,12 +9,12 @@ namespace DayOff.Controllers
     {
         const string REMOTE_GAMES_URI = "http://localhost:49500/api/game";
 
-        public InfoController()
+        public InfoController(IService service)
         {
-            infoService = new InfoService();
+            infoService = service;
         }
 
-        private readonly InfoService infoService;
+        private readonly IService infoService;
 
         [Route("remotegames")]
         public async Task<string> GetRemoteGames()
