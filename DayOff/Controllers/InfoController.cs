@@ -32,11 +32,5 @@ namespace DayOff.Controllers
 
             var response = request.GetResponse();
         }
-
-        [Route("my")]
-        public void GetMy()
-        {
-            var temp = "say - Hello";
-        }
     }
 }
