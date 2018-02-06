@@ -1,4 +1,5 @@
 ﻿using DayOff.Services.Controls;
+using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http;
 
@@ -21,6 +22,15 @@ namespace DayOff.Controllers
         {
             var result = await infoService.GetInfoFromRemoteService(REMOTE_GAMES_URI);
             return result; 
+        }
+        
+        [Route("test")]
+        public void GetTestRemote()
+        {
+            var request = WebRequest.Create("https://www.andersenlab.com/");
+            request.Method = "GET";
+
+            var response = request.GetResponse();
         }
     }
 }
